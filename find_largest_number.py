@@ -1,4 +1,3 @@
-#python -m spacy download en_core_web_sm
 import fitz
 from spacy import load
 import numerizer
@@ -76,7 +75,7 @@ def get_max_number_in_pdf(file_name, model_name='en_core_web_sm'):
                     update_max_with_scaled_table_val(table_data, scale_factor, page_number, max_num)
 
         #besides tables with scaled values, we parse the text through spacy to try to catch numbers mentioned in words anywhere
-        #if you are not interested in numbers mentioned in tables, the table section (lines 63-77) could be commented out
+        #if you are not interested in numbers mentioned in tables, the table section (lines 62-75) could be commented out
         content = page.get_text("text")
         doc = nlp(content)
         a = doc._.numerize()
